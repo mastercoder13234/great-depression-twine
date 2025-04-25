@@ -9,7 +9,8 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play The Great Depression.</tw-noscript></noscript></tw-story>
-<tw-storydata name="The Great Depression" startnode="2" creator="Twine" creator-version="2.10.0" format="Harlowe" format-version="3.3.9" ifid="375B2538-DA7B-4D26-8425-AF8064F06960" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">.subtitle {
+<tw-storydata name="The Great Depression" startnode="2" creator="Twine" creator-version="2.10.0" format="Harlowe" format-version="3.3.9" ifid="375B2538-DA7B-4D26-8425-AF8064F06960" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
+	.subtitle {
   font-size: 1.4em;              /* Slightly larger than normal text */
   font-weight: 400;              /* Normal weight for readability */
   color: #888;                  /* Grey color for less noticeable text */
@@ -22,7 +23,46 @@
 }
 h1 {
   margin-bottom: 5px; /* Adds 10px of space below the <h1> */
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="Something" color="none"></tw-tag><tw-passagedata pid="1" name="Questions" tags="" position="400,400" size="100,100">Click on a question to view the answer for (upperfirst:$group).
+}
+/* Fixed width container */
+.container {
+  width: 100%;
+  max-width: 1140px; /* Similar to Bootstrap's .container */
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Fluid container */
+.container-fluid {
+  width: 100%;
+  padding: 0 15px;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px; /* Remove the negative margin on the sides */
+  margin-left: -15px;
+}
+
+/* Default col (auto or 12-column equivalent) */
+.col {
+  flex: 1 0 0%; /* Default to 100% width */
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* 6 col 6 layout: Each column takes up 50% width */
+.col-6 {
+  flex: 1 0 50%;
+}
+
+/* Responsive version: Adjust to 100% on smaller screens */
+@media (max-width: 768px) {
+  .col-6 {
+    flex: 1 0 100%; /* Stacks vertically on small screens */
+  }
+}
+</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="Something" color="none"></tw-tag><tw-passagedata pid="1" name="Questions" tags="" position="350,400" size="100,100">Click on a question to view the answer for (upperfirst:$group).
 (set: $questions to (a:
     &quot;How was life like for &quot;+$group+&quot; in the 1920s?&quot;,
     &quot;How did the stock market crash affect &quot;+$group+&quot;?&quot;,
@@ -60,80 +100,143 @@ Explore how the following groups dealt with the great depression:
     (goto: &quot;Questions&quot;)
 ]
 
-</tw-passagedata><tw-passagedata pid="3" name="How was life like for in the 1920s?" tags="" position="500,350" size="100,100">(text-style:&quot;bold&quot;,&quot;double-underline&quot;,&quot;smear&quot;)[How was life like for $group in the 1920s?]
+</tw-passagedata><tw-passagedata pid="3" name="How was life like for in the 1920s?" tags="" position="500,350" size="100,100">(text-style:&quot;bold&quot;,&quot;double-underline&quot;)[How was life like for $group in the 1920s?]
+&lt;div class=&quot;container&quot;&gt;
+&lt;div class=&quot;row&quot;&gt;
+&lt;div class=&quot;col-6&quot;&gt;
 (if:$group is &quot;immigrants&quot;)[
-	Group is immigrants.
+	During the roaring 20s many people immigrated to the US following world war 1. The roaring 20s being a time of prosperity atracted many immigrants who found work and shared in the nations prosperity. Assuming the immigrants were working class they took part in urbanisation and relativly high wages of the time. Like many they probably invested in the stock market and drove new ford model Ts as they had become affordable with the production line. 
 ]
 (if:$group is &quot;bankers&quot;)[
-	Group is some bankers.
+	Bankers and banks grew rapidly with the roaring 20s as many people had higher salaries and wanted to save their money for a later date. Bankers invested the money stored in the bank on the stock market and made large profits. They lived lavish and wealthy lifestyles living in desireable areas.
 ]
 (if:$group is &quot;buisness owners&quot;)[
-	Group is Buisness Owners.
-]</tw-passagedata><tw-passagedata pid="4" name="How did the stock market crash affect?" tags="" position="600,350" size="100,100">(text-style:&quot;bold&quot;,&quot;double-underline&quot;,&quot;smear&quot;)[How did the stock market crash affect $group?]
+	Buisness Owners made large profits as people having higher salaries spent more on luxury items that new buisnesses offered. This brought more income to buisness owners which reinvested the money into their own buisness or onto the stock market. 
+]
+&lt;/div&gt;
+&lt;div class=&quot;col-6&quot;&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="4" name="How did the stock market crash affect?" tags="" position="600,350" size="100,100">(text-style:&quot;bold&quot;,&quot;double-underline&quot;)[How did the stock market crash affect $group?]
+&lt;div class=&quot;container&quot;&gt;
+&lt;div class=&quot;row&quot;&gt;
+&lt;div class=&quot;col-6&quot;&gt;
 (if:$group is &quot;immigrants&quot;)[
-	Group is immigrants.
+	People who had immigrated to the US during the 1920s had probably tooken part in the prosperity and bought stocks on margin believeing the upward motion of the stock prices would never end. The stock market crash was caused by many who had seen the drop and other americans and then quickly sold their stocks for much lower than what they had bought it for acumulating debt. Many has savings accounts but the bank which had also invested in the stock market no longer had their money, so many lost everything. 
 ]
 (if:$group is &quot;bankers&quot;)[
-	Group is some bankers.
+	The stock market crash greatly affected bankers as their entire job usualy is to take the money people put into banks and invest it on the stock market. The stock market crash made the bankers lose people money totaling millions as they had invested not only for themselves but for many. Many either were fired or forced to close the bank as the bank couldnt handel the mass withdrawles.  Bankers lost all of the money they had invested on the stock market if they had sold  and lost peoples savings as well, harmign not only themselves but others. This also created a loss of trust in banks which made it difficult for banks to come back later. 
 ]
 (if:$group is &quot;buisness owners&quot;)[
-	Group is Buisness Owners.
-]</tw-passagedata><tw-passagedata pid="5" name="What was life like for during the great depression?" tags="" position="800,400" size="100,100">(text-style:&quot;bold&quot;,&quot;double-underline&quot;,&quot;smear&quot;)[
+	The stock market crash did not greatly affect buisness owners directly unless they had invested on the stock market. Many buisnesses however had probably made savings accoutns in banks to save money to pay workers wages, though with the crash they lost that saved money in bansk as the banks lost the money. If a buisness was a public company their company would also become undervalued. Out of the three groups buisness owners were not as affected as immigrants and far form as affected as bankers.
+]
+&lt;/div&gt;
+&lt;div class=&quot;col-6&quot;&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="5" name="What was life like for during the great depression?" tags="" position="800,400" size="100,100">(text-style:&quot;bold&quot;,&quot;double-underline&quot;)[
 What was life like for $group during the great depression?
 ]
+&lt;div class=&quot;container&quot;&gt;
+&lt;div class=&quot;row&quot;&gt;
+&lt;div class=&quot;col-6&quot;&gt;
 (if:$group is &quot;immigrants&quot;)[
-	Group is immigrants.
+	During the great depression immigrants has trouble finding jobs as many buisness owners discriminated and valued american workers over immigrants. Throuhgout the great depression many immigrants were deported for various reasons, some even legal immigrants were deported as many people developed a hate toards immigrants beliveing they were stealing american jobs.
 ]
 (if:$group is &quot;bankers&quot;)[
-	Group is some bankers.
+	During the great depression trust in banks was really low as the stock market crash had made banks loose people&#39;s money shattering their trust. Until the government began insuring deposits people were reluctant to start depositing money in banks again making it dificult for bankers to find work. 
 ]
 (if:$group is &quot;buisness owners&quot;)[
-	Group is Buisness Owners.
-]</tw-passagedata><tw-passagedata pid="6" name="How did FDR&#39;s New Deal benefit?" tags="" position="500,450" size="100,100">(text-style:&quot;bold&quot;,&quot;double-underline&quot;,&quot;smear&quot;)[
+	During the great depression buisness owners faced feirce competition as an oversuply of goods caused prices to drop fataly for many buisnesses. Buisnesses competed a lot and were not able to pay workers a lot of money which reduced worker spending which further harmed buisnesses. 
+]
+&lt;/div&gt;
+&lt;div class=&quot;col-6&quot;&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="6" name="How did FDR&#39;s New Deal benefit?" tags="" position="500,450" size="100,100">(text-style:&quot;bold&quot;,&quot;double-underline&quot;)[
 How did FDR&#39;s New Deal benefit $group?
 ]
+&lt;div class=&quot;container&quot;&gt;
+&lt;div class=&quot;row&quot;&gt;
+&lt;div class=&quot;col-6&quot;&gt;
 (if:$group is &quot;immigrants&quot;)[
-	Group is immigrants.
+	The new deal benefited immigrants by creating jobs for them on  government funded projects. This brought many out of poverty and while the wages were low, they still made some money. Relief from the great depression helped them the most.
 ]
 (if:$group is &quot;bankers&quot;)[
-	Group is some bankers.
+	Reform helped bankers in the sence that now the government guaranteed deposits so people began to put trust in banks again. This helped new banks form and created jobs for bankers. This allowedbankers to get reemployed and start making decent money again. 
 ]
 (if:$group is &quot;buisness owners&quot;)[
-	Group is Buisness Owners.
-]</tw-passagedata><tw-passagedata pid="7" name="How did the start of WW2 benefit?" tags="" position="600,450" size="100,100">(text-style:&quot;bold&quot;,&quot;double-underline&quot;,&quot;smear&quot;)[
+	Buisness owners were most helped by the recovery aspect of the New Deal. The government set regulations for prices wages and hours to help level the playing feild for buisnesses and end the downward direction that prices were going in. 
+]
+&lt;/div&gt;
+&lt;div class=&quot;col-6&quot;&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="7" name="How did the start of WW2 benefit?" tags="" position="600,450" size="100,100">(text-style:&quot;bold&quot;,&quot;double-underline&quot;)[
 How did the start of WW2 benefit $group?
 ]
+&lt;div class=&quot;container&quot;&gt;
+&lt;div class=&quot;row&quot;&gt;
+&lt;div class=&quot;col-6&quot;&gt;
 (if:$group is &quot;immigrants&quot;)[
-	Group is immigrants.
+	The start of world war 2 created many jobs for immigrants as factory workers, and soldiers. As new weapon manufacturing companies apeared immigrants were new given jobs and unemployment dropped. 
 ]
 (if:$group is &quot;bankers&quot;)[
-	Group is some bankers.
+	World war 2 created jobs for bankers as middle people in the selling and holding of bonds form the government. With unemployment also falling banks got large deposits form many peope who were now employed and saving money.
 ]
 (if:$group is &quot;buisness owners&quot;)[
-	Group is Buisness Owners.
-]</tw-passagedata><tw-passagedata pid="8" name="What lasting impression did the great depression have on?" tags="" position="700,450" size="100,100">(text-style:&quot;bold&quot;,&quot;double-underline&quot;,&quot;smear&quot;)[
+	Buisness owners could scale production and sale as war creates a large demand for many products especialy food and weapons. This gave buisnesses guaranteed government buyers for many products and as more people became employed with the start of WW2 more people began spending money again helping the economy and buisness owners thrive. 
+]
+&lt;/div&gt;
+&lt;div class=&quot;col-6&quot;&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="8" name="What lasting impression did the great depression have on?" tags="" position="700,450" size="100,100">(text-style:&quot;bold&quot;,&quot;double-underline&quot;)[
 What lasting impression did the great depression have on $group?
 ]
+&lt;div class=&quot;container&quot;&gt;
+&lt;div class=&quot;row&quot;&gt;
+&lt;div class=&quot;col-6&quot;&gt;
 (if:$group is &quot;immigrants&quot;)[
-	Group is immigrants.
+	The great depression created a lot of anti immigrant sentiment that carries on today. Mass deportations during the great depression shattered immigrants trust in the government and many depend on each other for mutual aid. 
 ]
 (if:$group is &quot;bankers&quot;)[
-	Group is some bankers.
+	Bankers were left with many new government regulations that limit interest rates and make htem more secure but also prevent very quick growth. Bankers now had much more secure and safe positions but they were also now highly government regulated. In a way their lives are better now as they have secure jobs but also now their profits are much more limited.
 ]
 (if:$group is &quot;buisness owners&quot;)[
-	Group is Buisness Owners.
-]</tw-passagedata><tw-passagedata pid="9" name="What cause of the great depression most affected?" tags="" position="700,350" size="100,100">(text-style:&quot;bold&quot;,&quot;double-underline&quot;,&quot;smear&quot;)[
+	The great depression left more regulations on buisness owners than banks. Minimum wages, maximum hours, and more regulations caused both buisnesses to hate and love the government as it regulated them but also protected them. 
+]
+&lt;/div&gt;
+&lt;div class=&quot;col-6&quot;&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="9" name="What cause of the great depression most affected?" tags="" position="700,350" size="100,100">(text-style:&quot;bold&quot;,&quot;double-underline&quot;)[
 What cause of the great depression most affected $group?
 ]
+&lt;div class=&quot;container&quot;&gt;
+&lt;div class=&quot;row&quot;&gt;
+&lt;div class=&quot;col-6&quot;&gt;
 (if:$group is &quot;immigrants&quot;)[
-	Group is immigrants.
+	Immigrants were most affected by unemployment as over 25% of americans in the US were unemployed during the worst parts of the Great Depression. Immigrants were less likely to get a job than natural born americans as buisness owners could often discriminate against them. 
 ]
 (if:$group is &quot;bankers&quot;)[
-	Group is some bankers.
+	Bankers were most affected by the stock market crash as lots of bankers had invested peoples money on the stock market so when it crashed they were unable to pay many people their money back. They had also loaned money to other people who bought stocks on margin who were then unable to pay the bankers back making the bankers loose even more money. The stock market crash and this loss of money caused many bankers to loose their jobs as the bank owners had to close the bank. 
 ]
 (if:$group is &quot;buisness owners&quot;)[
-	Group is Buisness Owners.
-]</tw-passagedata></tw-storydata>
+	Buisness owners were harmed by the oversupply of products and goods causing them to either sell at a minimal profit margin or a loss. Many could have problems selling their products at all. The oversuply of goods caused many buisnesses to close causing higher unemployment. 
+]
+&lt;/div&gt;
+&lt;div class=&quot;col-6&quot;&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
